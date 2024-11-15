@@ -17,12 +17,31 @@
 <!--    </applicationListeners>-->
     
     <actions>
-        <action id="JsonToYamlAction" class="com.bytegatherer.jsonplusyaml.actions.JsonToYaml" text="Convert JSON to YAML" description="Convert JSON content to YAML format">
-            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        <action id="JsonToYamlActionFromEditor" class="com.bytegatherer.jsonplusyaml.actions.fromEditor.JsonToYamlAction" text="Convert JSON to YAML" description="Convert JSON content to YAML format">
+            <!-- Add the action to the Editor's right-click context menu -->
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
         </action>
 
-        <action id="YamlToJsonAction" class="com.bytegatherer.jsonplusyaml.actions.YamlToJson" text="Convert YAML to JSON" description="Convert YAML content to JSON format">
-            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        <action id="YamlToJsonActionFromEditor" class="com.bytegatherer.jsonplusyaml.actions.fromEditor.YamlToJsonAction" text="Convert YAML to JSON" description="Convert YAML content to JSON format">
+            <!-- Add the action to the Editor's right-click context menu -->
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
         </action>
+
+        <action id="JsonToYamlActionFromFile" class="com.bytegatherer.jsonplusyaml.actions.fromFile.JsonToYamlAction" text="Convert JSON to YAML" description="Convert JSON content to YAML format">
+            <!-- Add the action to the Project tool window's right-click context menu -->
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+
+            <!-- Add the action to the File Tab context menu -->
+            <add-to-group group-id="EditorTabPopupMenu" anchor="last"/>
+        </action>
+
+        <action id="YamlToJsonActionFromFile" class="com.bytegatherer.jsonplusyaml.actions.fromFile.YamlToJsonAction" text="Convert YAML to JSON" description="Convert YAML content to JSON format">
+            <!-- Add the action to the Project tool window's right-click context menu -->
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+
+            <!-- Add the action to the File Tab context menu -->
+            <add-to-group group-id="EditorTabPopupMenu" anchor="last"/>
+        </action>
+
     </actions>
 </idea-plugin>
