@@ -28,6 +28,9 @@ dependencies {
     implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.18.0")
     implementation("com.fasterxml.jackson.core:jackson-core:2.17.2")
     implementation("org.yaml:snakeyaml:2.2")
+    testImplementation(kotlin("test"))
+    testImplementation("org.mockito:mockito-core:5.14.2")
+    testImplementation("org.mockito:mockito-junit-jupiter:5.14.2")
 }
 
 // Set the JVM language level used to build the project.
@@ -97,6 +100,10 @@ tasks {
                 )
             }
         }
+    }
+
+    test {
+        useJUnitPlatform()
     }
 
     // Configure UI tests plugin
