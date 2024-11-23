@@ -1,6 +1,6 @@
 <!-- Keep a Changelog guide -> https://keepachangelog.com -->
 
-# yson-plus-yaml Changelog
+# json-plus-yaml Changelog
 
 ## [Unreleased]
 ### Added
