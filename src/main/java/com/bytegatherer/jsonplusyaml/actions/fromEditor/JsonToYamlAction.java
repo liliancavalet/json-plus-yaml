@@ -14,6 +14,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Objects;
 
 import static com.bytegatherer.jsonplusyaml.helper.EditorValidator.*;
+import static com.bytegatherer.jsonplusyaml.helper.FileAndEditorOperations.changeFileExtensionWithUndoRedo;
 
 public class JsonToYamlAction extends AnAction {
 
@@ -30,7 +31,10 @@ public class JsonToYamlAction extends AnAction {
 
             String yamlOutput = JsonYamlConverter.convertToYaml(jsonInput);
 
-            WriteCommandAction.runWriteCommandAction(project, () -> document.setText(yamlOutput));
+            WriteCommandAction.runWriteCommandAction(project, () -> {
+                document.setText(yamlOutput);
+                changeFileExtensionWithUndoRedo(document, "yaml");
+            });
         } catch (Exception e) {
             Messages.showMessageDialog(project, e.getMessage(), "Error", Messages.getErrorIcon());
         }

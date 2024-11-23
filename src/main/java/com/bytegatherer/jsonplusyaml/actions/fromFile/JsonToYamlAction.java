@@ -11,6 +11,7 @@ import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.annotations.NotNull;
 
+import static com.bytegatherer.jsonplusyaml.helper.FileAndEditorOperations.changeFileExtensionWithUndoRedo;
 import static com.bytegatherer.jsonplusyaml.helper.FileValidator.*;
 import static com.intellij.openapi.actionSystem.CommonDataKeys.VIRTUAL_FILE;
 
@@ -30,7 +31,10 @@ public class JsonToYamlAction extends AnAction {
 
             String yamlOutput = JsonYamlConverter.convertToYaml(jsonInput);
 
-            WriteCommandAction.runWriteCommandAction(project, () -> document.setText(yamlOutput));
+            WriteCommandAction.runWriteCommandAction(project, () -> {
+                document.setText(yamlOutput);
+                changeFileExtensionWithUndoRedo(selectedFile, "yaml");
+            });
         } catch (Exception e) {
             Messages.showMessageDialog(project, e.getMessage(), "Error", Messages.getErrorIcon());
         }
