@@ -1,47 +1,45 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.bytegatherer.jsonplusyaml</id>
-    <name>Json-Plus-Yaml</name>
-    <vendor url="www.bytegatherer.com">Byte Gatherer</vendor>
+  <id>com.bytegatherer.jsonplusyaml</id>
+  <name>Json-Plus-Yaml</name>
+  <vendor url="https://www.bytegatherer.com">Byte Gatherer</vendor>
 
-    <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.modules.platform</depends>
 
-<!--    <resource-bundle>messages.MyBundle</resource-bundle>-->
+  <actions>
+    <action id="JsonToYamlActionFromEditor"
+      class="com.bytegatherer.jsonplusyaml.actions.fromEditor.JsonToYamlAction"
+      text="Convert JSON to YAML" description="Convert JSON content to YAML format">
+      <!-- Add the action to the Editor's right-click context menu -->
+      <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+    </action>
 
-<!--    <extensions defaultExtensionNs="com.intellij">-->
-<!--        <toolWindow factoryClass="com.bytegatherer.jsonplusyaml.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>-->
-<!--    </extensions>-->
+    <action id="YamlToJsonActionFromEditor"
+      class="com.bytegatherer.jsonplusyaml.actions.fromEditor.YamlToJsonAction"
+      text="Convert YAML to JSON" description="Convert YAML content to JSON format">
+      <!-- Add the action to the Editor's right-click context menu -->
+      <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+    </action>
 
-<!--    <applicationListeners>-->
-<!--        <listener class="com.bytegatherer.jsonplusyaml.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>-->
-<!--    </applicationListeners>-->
-    
-    <actions>
-        <action id="JsonToYamlActionFromEditor" class="com.bytegatherer.jsonplusyaml.actions.fromEditor.JsonToYamlAction" text="Convert JSON to YAML" description="Convert JSON content to YAML format">
-            <!-- Add the action to the Editor's right-click context menu -->
-            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
-        </action>
+    <action id="JsonToYamlActionFromFile"
+      class="com.bytegatherer.jsonplusyaml.actions.fromFile.JsonToYamlAction"
+      text="Convert JSON to YAML" description="Convert JSON content to YAML format">
+      <!-- Add the action to the Project tool window's right-click context menu -->
+      <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
 
-        <action id="YamlToJsonActionFromEditor" class="com.bytegatherer.jsonplusyaml.actions.fromEditor.YamlToJsonAction" text="Convert YAML to JSON" description="Convert YAML content to JSON format">
-            <!-- Add the action to the Editor's right-click context menu -->
-            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
-        </action>
+      <!-- Add the action to the File Tab context menu -->
+      <add-to-group group-id="EditorTabPopupMenu" anchor="last"/>
+    </action>
 
-        <action id="JsonToYamlActionFromFile" class="com.bytegatherer.jsonplusyaml.actions.fromFile.JsonToYamlAction" text="Convert JSON to YAML" description="Convert JSON content to YAML format">
-            <!-- Add the action to the Project tool window's right-click context menu -->
-            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+    <action id="YamlToJsonActionFromFile"
+      class="com.bytegatherer.jsonplusyaml.actions.fromFile.YamlToJsonAction"
+      text="Convert YAML to JSON" description="Convert YAML content to JSON format">
+      <!-- Add the action to the Project tool window's right-click context menu -->
+      <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
 
-            <!-- Add the action to the File Tab context menu -->
-            <add-to-group group-id="EditorTabPopupMenu" anchor="last"/>
-        </action>
+      <!-- Add the action to the File Tab context menu -->
+      <add-to-group group-id="EditorTabPopupMenu" anchor="last"/>
+    </action>
 
-        <action id="YamlToJsonActionFromFile" class="com.bytegatherer.jsonplusyaml.actions.fromFile.YamlToJsonAction" text="Convert YAML to JSON" description="Convert YAML content to JSON format">
-            <!-- Add the action to the Project tool window's right-click context menu -->
-            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
-
-            <!-- Add the action to the File Tab context menu -->
-            <add-to-group group-id="EditorTabPopupMenu" anchor="last"/>
-        </action>
-
-    </actions>
+  </actions>
 </idea-plugin>
