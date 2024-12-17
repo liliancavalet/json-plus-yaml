@@ -19,6 +19,16 @@ class JsonYamlConverterTest {
   }
 
   @Test
+  void shouldConvertJsonArrayToYaml() {
+    String validJson = "[{\"key\":\"value\"}]";
+
+    String yamlOutput = JsonYamlConverter.convertToYaml(validJson);
+
+    assertTrue(yamlOutput.contains("key: \"value\""));
+  }
+
+
+  @Test
   void shouldThrowNotJsonExceptionWhenContentProvidedIsNotJson() {
     String invalidJson = "not valid json";
 
@@ -47,6 +57,18 @@ class JsonYamlConverterTest {
     String jsonOutput = JsonYamlConverter.convertToJson(validYaml);
 
     assertTrue(jsonOutput.contains("\"key\" : \"value\""));
+  }
+
+  @Test
+  void shouldConvertYamlListToJsonArray() {
+    String validYaml = "- key: value\n- key2: value2";
+
+    String jsonOutput = JsonYamlConverter.convertToJson(validYaml);
+
+    assertTrue(jsonOutput.trim().startsWith("["));
+    assertTrue(jsonOutput.trim().endsWith("]"));
+    assertTrue(jsonOutput.contains("\"key\" : \"value\""));
+    assertTrue(jsonOutput.contains("\"key2\" : \"value2\""));
   }
 
   @Test
