@@ -1,0 +1,15 @@
+<ivy-module version="2.0">
+  <info organisation="bundledPlugin" module="com.intellij.java" revision="243.21565.193+860"/>
+  <configurations>
+    <conf name="default" visibility="public"/>
+  </configurations>
+  <publications>
+    <artifact name="/home/lilian/.gradle/caches/8.9/transforms/5ea63b3d366d3649421387703cdcd4f8/transformed/ideaIC-2024.3/plugins/java" type="directory" conf="default"/>
+  </publications>
+  <dependencies>
+    <dependency org="bundledPlugin" name="com.intellij.copyright" rev="243.21565.193+51"/>
+    <dependency org="bundledPlugin" name="com.intellij.platform.images" rev="243.21565.193+192"/>
+    <dependency org="bundledPlugin" name="com.jetbrains.performancePlugin" rev="243.21565.193+870"/>
+    <dependency org="bundledPlugin" name="org.jetbrains.plugins.terminal" rev="243.21565.193+742"/>
+  </dependencies>
+</ivy-module>

@@ -1,0 +1,17 @@
+<ivy-module version="2.0">
+  <info organisation="bundledPlugin" module="tanvd.grazi" revision="243.21565.193+432"/>
+  <configurations>
+    <conf name="default" visibility="public"/>
+  </configurations>
+  <publications>
+    <artifact name="/home/lilian/.gradle/caches/8.9/transforms/e3ef6674a67e356dc051619f93cf8fec/transformed/ideaIC-2024.3/plugins/grazie" type="directory" conf="default"/>
+  </publications>
+  <dependencies>
+    <dependency org="bundledPlugin" name="com.intellij.java" rev="243.21565.193+74"/>
+    <dependency org="bundledPlugin" name="com.intellij.modules.json" rev="243.21565.193+168"/>
+    <dependency org="bundledPlugin" name="org.intellij.plugins.markdown" rev="243.21565.193+585"/>
+    <dependency org="bundledPlugin" name="com.intellij.properties" rev="243.21565.193+509"/>
+    <dependency org="bundledPlugin" name="org.jetbrains.plugins.yaml" rev="243.21565.193+671"/>
+    <dependency org="bundledModule" name="intellij.platform.vcs.impl" rev="243.21565.193+478"/>
+  </dependencies>
+</ivy-module>

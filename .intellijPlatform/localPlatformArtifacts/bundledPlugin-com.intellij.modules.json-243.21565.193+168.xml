@@ -1,0 +1,10 @@
+<ivy-module version="2.0">
+  <info organisation="bundledPlugin" module="com.intellij.modules.json" revision="243.21565.193+168"/>
+  <configurations>
+    <conf name="default" visibility="public"/>
+  </configurations>
+  <publications>
+    <artifact name="/home/lilian/.gradle/caches/8.9/transforms/e3ef6674a67e356dc051619f93cf8fec/transformed/ideaIC-2024.3/plugins/json" type="directory" conf="default"/>
+  </publications>
+  <dependencies/>
+</ivy-module>
