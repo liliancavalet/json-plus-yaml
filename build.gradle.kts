@@ -43,7 +43,6 @@ dependencies {
     intellijPlatform {
         create(providers.gradleProperty("platformType"), providers.gradleProperty("platformVersion"))
         bundledPlugin("com.intellij.java")
-        instrumentationTools()
         pluginVerifier()
         zipSigner()
         testFramework(TestFrameworkType.Platform)
@@ -103,7 +102,7 @@ intellijPlatform {
 
     pluginVerification {
         ides {
-            ide("IC", "2024.3")
+            recommended()
         }
     }
 }
@@ -126,6 +125,10 @@ kover {
 }
 
 tasks {
+    test {
+        useJUnitPlatform()
+    }
+
     wrapper {
         gradleVersion = providers.gradleProperty("gradleVersion").get()
     }
