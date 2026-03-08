@@ -36,7 +36,7 @@ dependencies {
     implementation("com.fasterxml.jackson.core:jackson-core:2.21.1")
     implementation("org.yaml:snakeyaml:2.5")
     testImplementation(kotlin("test"))
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.11.4")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:6.0.3")
     testRuntimeOnly("junit:junit:4.13.2")
     testImplementation("org.mockito:mockito-core:5.21.0")
     testImplementation("org.mockito:mockito-junit-jupiter:5.21.0")
