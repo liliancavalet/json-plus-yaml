@@ -5,7 +5,7 @@ import org.jetbrains.intellij.platform.gradle.TestFrameworkType
 
 plugins {
     id("java") // Java support
-    id("org.jetbrains.intellij.platform") version "2.2.1" //Gradle IntelliJ Plugin
+    id("org.jetbrains.intellij.platform") version "2.12.0" //Gradle IntelliJ Plugin
     alias(libs.plugins.kotlin) // Kotlin support
     alias(libs.plugins.changelog) // Gradle Changelog Plugin
     alias(libs.plugins.qodana) // Gradle Qodana Plugin
@@ -37,16 +37,16 @@ dependencies {
     implementation("org.yaml:snakeyaml:2.5")
     testImplementation(kotlin("test"))
     testImplementation("org.junit.jupiter:junit-jupiter-api:6.0.3")
+    testRuntimeOnly("junit:junit:4.13.2")
     testImplementation("org.mockito:mockito-core:5.21.0")
     testImplementation("org.mockito:mockito-junit-jupiter:5.21.0")
     // IntelliJ Platform Gradle Plugin Dependencies Extension - read more: https://plugins.jetbrains.com/docs/intellij/tools-intellij-platform-gradle-plugin-dependencies-extension.html
     intellijPlatform {
         create(providers.gradleProperty("platformType"), providers.gradleProperty("platformVersion"))
         bundledPlugin("com.intellij.java")
-        instrumentationTools()
         pluginVerifier()
         zipSigner()
-        testFramework(TestFrameworkType.Platform)
+        testFramework(TestFrameworkType.JUnit5)
     }
 }
 
@@ -103,7 +103,7 @@ intellijPlatform {
 
     pluginVerification {
         ides {
-            ide("IC", "2024.3")
+            recommended()
         }
     }
 }
@@ -126,6 +126,10 @@ kover {
 }
 
 tasks {
+    test {
+        useJUnitPlatform()
+    }
+
     wrapper {
         gradleVersion = providers.gradleProperty("gradleVersion").get()
     }
