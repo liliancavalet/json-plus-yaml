@@ -5,7 +5,7 @@ import org.jetbrains.intellij.platform.gradle.TestFrameworkType
 
 plugins {
     id("java") // Java support
-    id("org.jetbrains.intellij.platform") version "2.12.0" //Gradle IntelliJ Plugin
+    id("org.jetbrains.intellij.platform") version "2.13.0" //Gradle IntelliJ Plugin
     alias(libs.plugins.kotlin) // Kotlin support
     alias(libs.plugins.changelog) // Gradle Changelog Plugin
     alias(libs.plugins.qodana) // Gradle Qodana Plugin
