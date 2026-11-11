@@ -33,7 +33,7 @@ dependencies {
     implementation("com.fasterxml.jackson.core:jackson-databind:2.23.0")
     implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.22.4")
     implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.22.4")
-    implementation("com.fasterxml.jackson.core:jackson-core:2.22.4")
+    implementation("com.fasterxml.jackson.core:jackson-core:2.23.0")
     implementation("org.yaml:snakeyaml:2.7")
     testImplementation(kotlin("test"))
     testImplementation("org.junit.jupiter:junit-jupiter-api:6.1.3")
